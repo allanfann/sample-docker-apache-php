@@ -1,8 +1,10 @@
-From ubuntu:latest
+From ubuntu:14.04
 
 # install apache
 RUN apt-get update && DEBIAN_FRONTEND=nointeraction apt-get -y install \
-         apache2 php7.0 libapache2-mod-php7.0
+         apache2 php5 libapache2-mod-php5
+
+COPY index.html /var/www/html/
 
 # run apache and expose port
 EXPOSE 80
